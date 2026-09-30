@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A Special Question...</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%227 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="heartContainer" class="heart-container"></div>
+
+    <!-- SCREEN 1: THE PROPOSAL -->
+    <!-- 'active-screen' class will make sure this is the only one showing at start -->
+    <div id="screen1" class="screen active-screen">
+        <img src="https://media.tenor.com/ef30O_I_I98AAAAi/cat-please.gif" alt="Begging cat" class="gif">
+        <h1>Sunn Anushka... Will you go on a date with me? 🥺</h1>
+        <div class="button-container">
+            <button id="yesBtn" class="btn yes-btn">Yes!</button>
+            <!-- Notice we give the No button a specific ID so we can make it run away later -->
+            <button id="noBtn" class="btn no-btn">No</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: THE CELEBRATION -->
+    <div id="screen2" class="screen">
+        <img src="https://media.tenor.com/0vKzE91U9H8AAAAi/tkthao219-bubududu.gif" alt="Happy couple" class="gif">
+        
+        <!-- The text will type out inside this h1 -->
+        <h1 id="typewriterText"></h1> 
+        
+        <!-- Hidden by default, will appear when typing finishes -->
+        <button id="nextBtn" class="btn next-btn" style="display: none;">Plan the details ➔</button>
+    </div>
+
+    <!-- SCREEN 3: THE LOGISTICS -->
+    <!-- SCREEN 3: THE LOGISTICS -->
+    <div id="screen3" class="screen">
+        <h1>Let's lock it in! 🗓️</h1>
+        <p>Pick a time that works for you:</p>
+        
+        <form id="dateForm" action="https://formspree.io/f/xbglbajd" method="POST">
+            
+            <!-- Hidden inputs: Formspree reads these, but the user doesn't see them -->
+            <input type="hidden" name="date" id="selectedDate" required>
+            <input type="hidden" name="time" id="selectedTime" required>
+            
+            <label>Choose a Date:</label>
+            <!-- IF YOU WANT TO CHANGE DATES LATER: Just change the text here and inside data-value="" -->
+            <div class="chip-group">
+                <button type="button" class="chip date-chip" data-value="Oct 1st">Oct 1st</button>
+                <button type="button" class="chip date-chip" data-value="Oct 2nd">Oct 2nd</button>
+                <button type="button" class="chip date-chip" data-value="Oct 3rd">Oct 3rd</button>
+            </div>
+            
+            <label>Choose a Time:</label>
+            <!-- IF YOU WANT TO CHANGE TIMES LATER: Just change the text here! -->
+            <div class="chip-group">
+                <button type="button" class="chip time-chip" data-value="7:00 PM">7:00 PM</button>
+                <button type="button" class="chip time-chip" data-value="8:00 PM">8:00 PM</button>
+            </div>
+            
+            <label for="food">Any specific cravings?</label>
+            <input type="text" name="food" id="food" placeholder="IceCream, Pizza, etc...">
+            
+            <button type="submit" id="submitBtn" class="btn submit-btn">Accept Date! ✨</button>
+        </form>
+    </div>
+
+    <!-- SCREEN 4: FINAL CONFIRMATION -->
+    <div id="screen4" class="screen">
+        <img src="https://media.tenor.com/b5U2zB-uEykAAAAi/tkthao219-bubududu.gif" alt="Cute bears" class="gif">
+        <h1>It's a Date! 🎉</h1>
+        <p>I got your details safely. Tumhara Intezaar rahega! ❤️</p>
+    </div>
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+    <body>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
